@@ -2,6 +2,7 @@
 
 import { Icons } from "@/components/icons";
 import { NavMenu } from "@/components/nav-menu";
+import { ThemeToggle } from "@/components/theme-toggle";
 import { siteConfig } from "@/lib/config";
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
@@ -112,7 +113,7 @@ export function Navbar() {
           <div className="flex h-[56px] items-center justify-between p-4">
             <Link href="/" className="flex items-center gap-3">
               <Icons.logo className="size-7 md:size-10" />
-              <p className="text-lg font-semibold text-primary">McCheyne</p>
+              <p className="text-lg font-semibold text-primary">SkyAgent</p>
             </Link>
 
             <NavMenu />
@@ -120,12 +121,13 @@ export function Navbar() {
             <div className="flex flex-row items-center gap-1 md:gap-3 shrink-0">
               <div className="flex items-center space-x-6">
                 <Link
-                  className="bg-blue-600 h-8 hidden md:flex items-center justify-center text-sm font-semibold tracking-wide rounded-full text-white w-fit px-5 shadow-lg shadow-blue-600/25 hover:bg-blue-700 transition-all"
-                  href="#oferta"
+                  className="bg-secondary h-8 hidden md:flex items-center justify-center text-sm font-normal tracking-wide rounded-full text-primary-foreground dark:text-secondary-foreground w-fit px-4 shadow-[inset_0_1px_2px_rgba(255,255,255,0.25),0_3px_3px_-1.5px_rgba(16,24,40,0.06),0_1px_1px_rgba(16,24,40,0.08)] border border-white/[0.12]"
+                  href="#"
                 >
-                  QUERO AGORA
+                  Try for free
                 </Link>
               </div>
+              <ThemeToggle />
               <button
                 className="md:hidden border border-border size-8 rounded-md cursor-pointer flex items-center justify-center"
                 onClick={toggleDrawer}
@@ -168,7 +170,7 @@ export function Navbar() {
                   <Link href="/" className="flex items-center gap-3">
                     <Icons.logo className="size-7 md:size-10" />
                     <p className="text-lg font-semibold text-primary">
-                      McCheyne
+                      SkyAgent
                     </p>
                   </Link>
                   <button
@@ -216,10 +218,10 @@ export function Navbar() {
                 {/* Action buttons */}
                 <div className="flex flex-col gap-2">
                   <Link
-                    href="#oferta"
-                    className="bg-blue-600 h-8 flex items-center justify-center text-sm font-semibold tracking-wide rounded-full text-white w-full px-4 shadow-lg shadow-blue-600/25 hover:bg-blue-700 transition-all ease-out active:scale-95"
+                    href="#"
+                    className="bg-secondary h-8 flex items-center justify-center text-sm font-normal tracking-wide rounded-full text-primary-foreground dark:text-secondary-foreground w-full px-4 shadow-[inset_0_1px_2px_rgba(255,255,255,0.25),0_3px_3px_-1.5px_rgba(16,24,40,0.06),0_1px_1px_rgba(16,24,40,0.08)] border border-white/[0.12] hover:bg-secondary/80 transition-all ease-out active:scale-95"
                   >
-                    QUERO AGORA
+                    Try for free
                   </Link>
                 </div>
               </div>

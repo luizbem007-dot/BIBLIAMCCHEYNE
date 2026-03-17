@@ -1,7 +1,7 @@
 export const siteConfig = {
-  name: "Bíblia Devocional McCheyne",
+  name: "SkyAgent",
   url: "https://agent-magicui.vercel.app",
-  description: "Leia a Bíblia Inteira em 1 Ano, Investindo Apenas 15 Minutos por Dia.",
+  description: "Your template for building AI-powered agents with Magic UI.",
   links: {
     twitter: "https://x.com/dillionverma",
     github: "https://github.com/dillionverma",

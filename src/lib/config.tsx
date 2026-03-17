@@ -48,10 +48,10 @@ export const siteConfig = {
   },
   nav: {
     links: [
-      { id: 1, name: "Início", href: "#hero" },
-      { id: 2, name: "O Método", href: "#beneficios" },
-      { id: 3, name: "Depoimentos", href: "#depoimentos" },
-      { id: 4, name: "Oferta", href: "#oferta" },
+      { id: 1, name: "Home", href: "#hero" },
+      { id: 2, name: "How it Works", href: "#bento" },
+      { id: 3, name: "Features", href: "#features" },
+      { id: 4, name: "Pricing", href: "#pricing" },
     ],
   },
   hero: {
@@ -69,18 +69,18 @@ export const siteConfig = {
         <path d="M2.37845 10.5993L2.57045 10.4893L6.88445 12.9533C7.22435 13.1474 7.60901 13.2496 8.00045 13.2496C8.39189 13.2496 8.77656 13.1474 9.11645 12.9533L13.4305 10.4883L13.6225 10.5983C13.7374 10.6638 13.833 10.7586 13.8994 10.8731C13.9659 10.9875 14.0009 11.1175 14.0009 11.2498C14.0009 11.3821 13.9659 11.5121 13.8994 11.6265C13.833 11.7409 13.7374 11.8357 13.6225 11.9013L8.37245 14.9013C8.25915 14.966 8.13093 15 8.00045 15C7.86997 15 7.74175 14.966 7.62845 14.9013L2.37845 11.9013C2.2635 11.8357 2.16795 11.7409 2.10148 11.6265C2.03501 11.5121 2 11.3821 2 11.2498C2 11.1175 2.03501 10.9875 2.10148 10.8731C2.16795 10.7586 2.2635 10.6638 2.37845 10.5983V10.5993Z" />
       </svg>
     ),
-    badge: "Introducing custom automations",
-    title: "Meet your AI Agent Streamline your workflow",
+    badge: "Método de leitura bíblica comprovado",
+    title: "Leia a Bíblia Inteira em 1 Ano, Investindo Apenas 15 Minutos por Dia",
     description:
-      "AI assistant designed to streamline your digital workflows and handle mundane tasks, so you can focus on what truly matters",
+      "O método histórico que conecta o Antigo e o Novo Testamento diariamente que faz você experimentar diariamente uma transformação em sua vida",
     cta: {
       primary: {
-        text: "Try for Free",
-        href: "#",
+        text: "Quero Agora",
+        href: "#pricing",
       },
       secondary: {
-        text: "Log in",
-        href: "#",
+        text: "Assistir ao Vídeo",
+        href: "#hero",
       },
     },
   },
@@ -286,62 +286,62 @@ export const siteConfig = {
     ],
   },
   featureSection: {
-    title: "Simple. Seamless. Smart.",
+    title: "O Método da Sincronização Testamentária",
     description:
-      "Discover how SkyAgent transforms your commands into action in four easy steps",
+      "Veja na prática como o Espírito Santo conecta os textos e Deus ministra diretamente ao seu coração todos os dias: EXEMPLO DO DIA 1",
     items: [
       {
         id: 1,
-        title: "Ask Your AI Agent Directly",
+        title: "Gênesis 1: A Criação",
         content:
-          "Speak or type your command—let SkyAgent capture your intent. Your request instantly sets the process in motion.",
+          "O seu devocional começa nas fundações da fé. Você contempla a criação do mundo e entende o princípio do plano perfeito de Deus.",
         image:
           "https://images.unsplash.com/photo-1720371300677-ba4838fa0678?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       },
       {
         id: 2,
-        title: "Let SkyAgent Process It",
+        title: "Mateus 1: O Evangelho",
         content:
-          "We prioritize the needs and preferences of our users in our design process.",
+          "No mesmo dia, você avança para o Novo Testamento e contempla a nova criação em Cristo. A Palavra se conecta na sua mente.",
         image:
           "https://images.unsplash.com/photo-1686170287433-c95faf6d3608?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwzfHx8ZW58MHx8fHx8fA%3D%3D",
       },
       {
         id: 3,
-        title: "Receive Instant, Actionable Results",
+        title: "Esdras 1: A Restauração",
         content:
-          "Our features seamlessly integrate with your existing systems for a smooth experience.",
+          "A terceira porção traz o retorno do povo cativo. Uma leitura viva, direto da Palavra, que renova a esperança em dias difíceis.",
         image:
           "https://images.unsplash.com/photo-1720378042271-60aff1e1c538?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxMHx8fGVufDB8fHx8fA%3D%3D",
       },
       {
         id: 4,
-        title: "Continuous Improvement",
+        title: "Atos 1: A Igreja",
         content:
-          "We are constantly updating and improving our features to provide the best experience.",
+          "Você fecha a leitura vendo o poder do Espírito Santo no nascimento da Igreja, trazendo o avivamento para dentro do seu quarto.",
         image:
           "https://images.unsplash.com/photo-1666882990322-e7f3b8df4f75?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDF8fHxlbnwwfHx8fHw%3D",
       },
     ],
   },
   bentoSection: {
-    title: "Empower Your Workflow with AI",
+    title: "O Segredo Por Trás do Método",
     description:
-      "Ask your AI Agent for real-time collaboration, seamless integrations, and actionable insights to streamline your operations.",
+      "Há mais de 180 anos, homens de Deus usam este método para vencer a inconstância e receber todos os dias uma porção viva da Palavra e uma verdadeira transformação na sua vida.",
     items: [
       {
         id: 1,
         content: <FirstBentoAnimation />,
-        title: "Real-time AI Collaboration",
+        title: "A Bíblia de Capa a Capa",
         description:
-          "Experience real-time assistance. Ask your AI Agent to coordinate tasks, answer questions, and maintain team alignment.",
+          "Finalmente, você vai terminar o ano sabendo que leu a Palavra inteira. Sem culpa, sem pular páginas e sem travar nos livros mais densos.",
       },
       {
         id: 2,
         content: <SecondBentoAnimation />,
-        title: "Seamless Integrations",
+        title: "A Bíblia Explica a Própria Bíblia",
         description:
-          "Unite your favorite tools for effortless connectivity. Boost productivity through interconnected workflows.",
+          "Esse é o grande diferencial: ao ler o Antigo e o Novo Testamento no mesmo dia, os textos se conectam. Você entende o contexto sem precisar de teologia complicada.",
       },
       {
         id: 3,
@@ -353,16 +353,16 @@ export const siteConfig = {
             ]}
           />
         ),
-        title: "Instant Insight Reporting",
+        title: "O Fim do \"O Que Ler Hoje?\"",
         description:
-          "Transform raw data into clear insights in seconds. Empower smarter decisions with real-time, always-learning intelligence.",
+          "O mapa já está pronto nas páginas. Você apenas abre na data do dia, segue as 4 porções exatas e constrói um hábito sólido, impossível de abandonar.",
       },
       {
         id: 4,
         content: <FourthBentoAnimation once={false} />,
-        title: "Smart Automation",
+        title: "Apenas 15 Minutos Diários",
         description:
-          "Set it, forget it. Your AI Agent tackles repetitive tasks so you can focus on strategy, innovation, and growth.",
+          "Esqueça a força bruta e as metas irreais. É um método leve, feito para a rotina corrida, entregando a porção perfeita de alimento para a sua mente cansada.",
       },
     ],
   },
@@ -691,11 +691,11 @@ export const siteConfig = {
   },
   quoteSection: {
     quote:
-      "SkyAgent has transformed our daily operations. Tasks that once consumed hours now complete in moments, freeing our team to focus on creativity and strategic growth.",
+      "Eu não conheço nenhum outro método que seja tão bem-sucedido em levar a pessoa a ler toda a Bíblia e a ter uma visão panorâmica dela. Usei o método de McCheyne por mais de 50 anos e, para mim, ele é o melhor que existe.",
     author: {
-      name: "Alex Johnson",
-      role: "CTO, Innovatech",
-      image: "https://randomuser.me/api/portraits/men/91.jpg",
+      name: "D. Martyn Lloyd-Jones",
+      role: "Teólogo e um dos maiores pregadores do século XX",
+      image: "/martynlloydjones.webp",
     },
   },
   pricing: {
@@ -964,45 +964,45 @@ export const siteConfig = {
     },
   ],
   faqSection: {
-    title: "Frequently Asked Questions",
+    title: "Perguntas Frequentes",
     description:
-      "Answers to common questions about SkyAgent and its features. If you have any other questions, please don't hesitate to contact us.",
+      "Tire suas dúvidas sobre a Bíblia Devocional McCheyne. Se tiver outras perguntas, entre em contato conosco.",
     faQitems: [
       {
         id: 1,
-        question: "What is an AI Agent?",
+        question: "Qual é a tradução desta Bíblia?",
         answer:
-          "An AI Agent is an intelligent software program that can perform tasks autonomously, learn from interactions, and make decisions to help achieve specific goals. It combines artificial intelligence and machine learning to provide personalized assistance and automation.",
+          "Utilizamos a Almeida Corrigida Fiel (ACF) da Sociedade Bíblica Trinitariana. É uma tradução amplamente reconhecida e respeitada pela sua fidelidade rigorosa aos textos originais (Textus Receptus e Texto Massorético), garantindo uma leitura reverente e precisa da Palavra de Deus.",
       },
       {
         id: 2,
-        question: "How does SkyAgent work?",
+        question: "Essa Bíblia possui notas de rodapé ou comentários teológicos?",
         answer:
-          "SkyAgent works by analyzing your requirements, leveraging advanced AI algorithms to understand context, and executing tasks based on your instructions. It can integrate with your workflow, learn from feedback, and continuously improve its performance.",
+          "Não. O nosso foco é 100% no texto bíblico e na fluidez da leitura. Ela foi desenhada com um layout limpo para que você tenha um encontro direto com a Palavra, sem as distrações de comentários extensos. A própria Bíblia explica a Bíblia através do método de leitura diária.",
       },
       {
         id: 3,
-        question: "How secure is my data?",
+        question: "Eu preciso esperar o dia 1º de Janeiro para começar o plano?",
         answer:
-          "We implement enterprise-grade security measures including end-to-end encryption, secure data centers, and regular security audits. Your data is protected according to industry best practices and compliance standards.",
+          "De forma alguma! O método McCheyne foi pensado para uma jornada de 365 dias, independentemente de quando você começa. Você pode iniciar a sua leitura hoje mesmo, abrindo no \"Dia 1\" e seguindo o mapa a partir da data da sua compra.",
       },
       {
         id: 4,
-        question: "Can I integrate my existing tools?",
+        question: "Sou recém-convertido, esse plano é muito avançado para mim?",
         answer:
-          "Yes, SkyAgent is designed to be highly compatible with popular tools and platforms. We offer APIs and pre-built integrations for seamless connection with your existing workflow tools and systems.",
+          "Pelo contrário. O maior erro de quem está começando é ler apenas de Gênesis em diante e \"travar\" nos livros históricos. Como o método McCheyne intercala 4 porções diferentes todo dia, a sua leitura será muito mais dinâmica, leve e fácil de compreender.",
       },
       {
         id: 5,
-        question: "Is there a free trial available?",
+        question: "Os R$ 80,00 são uma assinatura mensal?",
         answer:
-          "Yes, we offer a 14-day free trial that gives you full access to all features. No credit card is required to start your trial, and you can upgrade or cancel at any time.",
+          "Não, você não está comprando um aplicativo ou assinatura. Este é um pagamento único de R$ 80,00 para receber a Bíblia física premium diretamente na sua casa. Não existem mensalidades ou taxas escondidas.",
       },
       {
         id: 6,
-        question: "How does SkyAgent save me time?",
+        question: "Como funciona o envio e a entrega?",
         answer:
-          "SkyAgent automates repetitive tasks, streamlines workflows, and provides quick solutions to common challenges. This automation and efficiency can save hours of manual work, allowing you to focus on more strategic activities.",
+          "Assim que o seu pagamento for aprovado, o seu pedido será processado e despachado com todo o cuidado. Você receberá um código de rastreio no seu e-mail para acompanhar a viagem da sua Bíblia passo a passo até chegar em suas mãos.",
       },
     ],
   },

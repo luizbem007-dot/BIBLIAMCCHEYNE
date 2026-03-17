@@ -1,221 +1,101 @@
-"use client";
+import { ShieldCheck } from "lucide-react";
+import Link from "next/link";
 
-import { SectionHeader } from "@/components/section-header";
-import { siteConfig } from "@/lib/config";
-import { cn } from "@/lib/utils";
-import { motion } from "motion/react";
-import { useState } from "react";
-
-interface TabsProps {
-  activeTab: "yearly" | "monthly";
-  setActiveTab: (tab: "yearly" | "monthly") => void;
-  className?: string;
-}
-
-function PricingTabs({ activeTab, setActiveTab, className }: TabsProps) {
-  return (
-    <div
-      className={cn(
-        "relative flex w-fit items-center rounded-full border p-0.5 backdrop-blur-sm cursor-pointer h-9 flex-row bg-muted",
-        className,
-      )}
-    >
-      {["monthly", "yearly"].map((tab) => (
-        <button
-          key={tab}
-          onClick={() => setActiveTab(tab as "yearly" | "monthly")}
-          className={cn(
-            "relative z-[1] px-2 h-8 flex items-center justify-center cursor-pointer",
-            {
-              "z-0": activeTab === tab,
-            },
-          )}
-        >
-          {activeTab === tab && (
-            <motion.div
-              layoutId="active-tab"
-              className="absolute inset-0 rounded-full bg-white dark:bg-[#3F3F46]  shadow-md border border-border"
-              transition={{
-                duration: 0.2,
-                type: "spring",
-                stiffness: 300,
-                damping: 25,
-                velocity: 2,
-              }}
-            />
-          )}
-          <span
-            className={cn(
-              "relative block text-sm font-medium duration-200 shrink-0",
-              activeTab === tab ? "text-primary" : "text-muted-foreground",
-            )}
-          >
-            {tab.charAt(0).toUpperCase() + tab.slice(1)}
-            {tab === "yearly" && (
-              <span className="ml-2 text-xs font-semibold text-secondary bg-secondary/15 py-0.5 w-[calc(100%+1rem)] px-1 rounded-full">
-                -20%
-              </span>
-            )}
-          </span>
-        </button>
-      ))}
-    </div>
-  );
-}
+const features = [
+  "Plano histórico de 365 dias integrado nas páginas",
+  "O Método da Sincronização Testamentária (4 leituras diárias)",
+  "Sem notas de rodapé (foco total na Palavra)",
+  "Tradução ACF fiel e tradicional aos originais",
+  "A ferramenta definitiva para o culto no seu lar",
+  "Capa dura premium preta com detalhes em dourado",
+];
 
 export function PricingSection() {
-  const [billingCycle, setBillingCycle] = useState<"monthly" | "yearly">(
-    "monthly",
-  );
-
-  // Update price animation
-  const PriceDisplay = ({
-    tier,
-  }: {
-    tier: (typeof siteConfig.pricing.pricingItems)[0];
-  }) => {
-    const price = billingCycle === "yearly" ? tier.yearlyPrice : tier.price;
-
-    return (
-      <motion.span
-        key={price}
-        className="text-4xl font-semibold"
-        initial={{
-          opacity: 0,
-          x: billingCycle === "yearly" ? -10 : 10,
-          filter: "blur(5px)",
-        }}
-        animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
-        transition={{ duration: 0.25, ease: [0.4, 0, 0.2, 1] }}
-      >
-        {price}
-      </motion.span>
-    );
-  };
-
   return (
     <section
       id="pricing"
-      className="flex flex-col items-center justify-center gap-10 pb-10 w-full relative"
+      className="flex flex-col items-center justify-center gap-10 py-20 w-full relative bg-[#F9FAFB] dark:bg-background"
     >
-      <SectionHeader>
-        <h2 className="text-3xl md:text-4xl font-medium tracking-tighter text-center text-balance">
-          {siteConfig.pricing.title}
+      {/* Header */}
+      <div className="flex flex-col items-center gap-3 px-6">
+        <h2 className="text-3xl md:text-4xl font-medium tracking-tighter text-center text-balance text-primary">
+          A Sua Transformação Começa Hoje.
         </h2>
-        <p className="text-muted-foreground text-center text-balance font-medium">
-          {siteConfig.pricing.description}
+        <p className="text-muted-foreground text-center text-balance font-medium max-w-lg">
+          Não adie mais a sua vida espiritual. Oferta especial de lançamento com
+          preço único e sem mensalidades.
         </p>
-      </SectionHeader>
-      <div className="relative w-full h-full">
-        <div className="absolute -top-14 left-1/2 -translate-x-1/2">
-          <PricingTabs
-            activeTab={billingCycle}
-            setActiveTab={setBillingCycle}
-            className="mx-auto"
-          />
-        </div>
+      </div>
 
-        <div className="grid min-[650px]:grid-cols-2 min-[900px]:grid-cols-3 gap-4 w-full max-w-6xl mx-auto px-6">
-          {siteConfig.pricing.pricingItems.map((tier) => (
-            <div
-              key={tier.name}
-              className={cn(
-                "rounded-xl grid grid-rows-[180px_auto_1fr] relative h-fit min-[650px]:h-full min-[900px]:h-fit",
-                tier.isPopular
-                  ? "md:shadow-[0px_61px_24px_-10px_rgba(0,0,0,0.01),0px_34px_20px_-8px_rgba(0,0,0,0.05),0px_15px_15px_-6px_rgba(0,0,0,0.09),0px_4px_8px_-2px_rgba(0,0,0,0.10),0px_0px_0px_1px_rgba(0,0,0,0.08)] bg-accent"
-                  : "bg-[#F3F4F6] dark:bg-[#F9FAFB]/[0.02] border border-border",
-              )}
-            >
-              <div className="flex flex-col gap-4 p-4">
-                <p className="text-sm">
-                  {tier.name}
-                  {tier.isPopular && (
-                    <span className="bg-gradient-to-b from-secondary/50 from-[1.92%] to-secondary to-[100%] text-white h-6 inline-flex w-fit items-center justify-center px-2 rounded-full text-sm ml-2 shadow-[0px_6px_6px_-3px_rgba(0,0,0,0.08),0px_3px_3px_-1.5px_rgba(0,0,0,0.08),0px_1px_1px_-0.5px_rgba(0,0,0,0.08),0px_0px_0px_1px_rgba(255,255,255,0.12)_inset,0px_1px_0px_0px_rgba(255,255,255,0.12)_inset]">
-                      Popular
-                    </span>
-                  )}
-                </p>
-                <div className="flex items-baseline mt-2">
-                  <PriceDisplay tier={tier} />
-                  <span className="ml-2">
-                    /{billingCycle === "yearly" ? "year" : "month"}
-                  </span>
-                </div>
-                <p className="text-sm mt-2">{tier.description}</p>
-              </div>
-
-              <div className="flex flex-col gap-2 p-4">
-                <button
-                  className={`h-10 w-full flex items-center justify-center text-sm font-normal tracking-wide rounded-full px-4 cursor-pointer transition-all ease-out active:scale-95 ${
-                    tier.isPopular
-                      ? `${tier.buttonColor} shadow-[inset_0_1px_2px_rgba(255,255,255,0.25),0_3px_3px_-1.5px_rgba(16,24,40,0.06),0_1px_1px_rgba(16,24,40,0.08)]`
-                      : `${tier.buttonColor} shadow-[0px_1px_2px_0px_rgba(255,255,255,0.16)_inset,0px_3px_3px_-1.5px_rgba(16,24,40,0.24),0px_1px_1px_-0.5px_rgba(16,24,40,0.20)]`
-                  }`}
-                >
-                  {tier.buttonText}
-                </button>
-              </div>
-              <hr className="border-border dark:border-white/20" />
-              <div className="p-4">
-                {tier.name !== "Basic" && (
-                  <p className="text-sm mb-4">
-                    Everything in {tier.name === "Pro" ? "Basic" : "Pro"} +
-                  </p>
-                )}
-                <ul className="space-y-3">
-                  {tier.features.map((feature) => (
-                    <li key={feature} className="flex items-center gap-2">
-                      <div
-                        className={cn(
-                          "size-5 rounded-full border border-primary/20 flex items-center justify-center",
-                          tier.isPopular &&
-                            "bg-muted-foreground/40 border-border",
-                        )}
-                      >
-                        <div className="size-3 flex items-center justify-center">
-                          <svg
-                            width="8"
-                            height="7"
-                            viewBox="0 0 8 7"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                            className="block dark:hidden"
-                          >
-                            <path
-                              d="M1.5 3.48828L3.375 5.36328L6.5 0.988281"
-                              stroke="#101828"
-                              strokeWidth="1.5"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                            />
-                          </svg>
-
-                          <svg
-                            width="8"
-                            height="7"
-                            viewBox="0 0 8 7"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                            className="hidden dark:block"
-                          >
-                            <path
-                              d="M1.5 3.48828L3.375 5.36328L6.5 0.988281"
-                              stroke="#FAFAFA"
-                              strokeWidth="1.5"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                            />
-                          </svg>
-                        </div>
-                      </div>
-                      <span className="text-sm">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
+      {/* Card Central */}
+      <div className="w-full max-w-lg mx-auto px-6">
+        <div className="bg-white dark:bg-accent rounded-2xl shadow-[0_8px_40px_-12px_rgba(0,0,0,0.12)] border border-border/50 overflow-hidden">
+          {/* Badge + Título + Preço */}
+          <div className="flex flex-col items-center gap-4 pt-10 pb-8 px-6">
+            <span className="inline-flex items-center gap-1.5 bg-secondary/10 text-secondary text-sm font-semibold px-4 py-1.5 rounded-full">
+              🏆 O Plano Completo de 1 Ano
+            </span>
+            <h3 className="text-xl md:text-2xl font-semibold tracking-tight text-primary text-center">
+              Bíblia Devocional McCheyne
+            </h3>
+            <div className="flex flex-col items-center gap-1">
+              <span className="text-lg text-muted-foreground line-through">
+                De R$ 87,00
+              </span>
+              <div className="flex items-baseline gap-1">
+                <span className="text-sm text-muted-foreground mr-1">Por apenas</span>
+                <span className="text-5xl md:text-6xl font-bold tracking-tighter text-primary">
+                  R$ 80
+                </span>
+                <span className="text-2xl font-semibold text-primary">,00</span>
               </div>
             </div>
-          ))}
+            <p className="text-sm text-muted-foreground">
+              pagamento único | sem taxas escondidas
+            </p>
+          </div>
+
+          {/* Separador */}
+          <hr className="border-border/60 mx-6" />
+
+          {/* Features */}
+          <div className="px-6 py-8">
+            <ul className="space-y-4">
+              {features.map((feature) => (
+                <li key={feature} className="flex items-start gap-3">
+                  <svg
+                    className="size-5 shrink-0 mt-0.5 text-emerald-500"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                  <span className="text-sm text-primary/80">{feature}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* CTA */}
+          <div className="px-6 pb-10">
+            <Link
+              href="#"
+              className="w-full h-12 flex items-center justify-center text-sm md:text-base font-semibold tracking-wide rounded-full text-white bg-secondary hover:bg-secondary/90 transition-all ease-out active:scale-[0.98] shadow-[inset_0_1px_2px_rgba(255,255,255,0.25),0_3px_3px_-1.5px_rgba(16,24,40,0.06),0_1px_1px_rgba(16,24,40,0.08)]"
+            >
+              SIM, QUERO GARANTIR MINHA BÍBLIA POR R$ 80
+            </Link>
+          </div>
         </div>
+      </div>
+
+      {/* Garantia */}
+      <div className="flex items-center gap-2 text-muted-foreground px-6">
+        <ShieldCheck className="size-5 text-secondary/60" />
+        <span className="text-sm">Compra 100% segura com garantia de satisfação</span>
       </div>
     </section>
   );
