@@ -11,6 +11,11 @@ export function PricingSection() {
     >
       {/* Card Central - sem subfundo, direto no background */}
       <div className="w-full max-w-md mx-auto px-4">
+        {/* Título */}
+        <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-center text-primary mb-6">
+          Bíblia Devocional McCheyne
+        </h2>
+
         {/* Imagem destaque */}
         <div className="w-full rounded-t-3xl overflow-hidden">
           <img
