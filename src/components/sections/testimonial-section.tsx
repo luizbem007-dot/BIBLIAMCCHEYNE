@@ -12,11 +12,11 @@ export function TestimonialSection() {
     >
       <SectionHeader>
         <h2 className="text-3xl md:text-4xl font-medium tracking-tighter text-center text-balance">
-          Empower Your Workflow with AI
+          Vidas Transformadas pela Palavra
         </h2>
         <p className="text-muted-foreground text-center text-balance font-medium">
-          Ask your AI Agent for real-time collaboration, seamless integrations,
-          and actionable insights to streamline your operations.
+          Pessoas reais que adotaram o método McCheyne e experimentaram
+          uma transformação profunda no seu relacionamento com Deus.
         </p>
       </SectionHeader>
       <SocialProofTestimonials testimonials={testimonials} />

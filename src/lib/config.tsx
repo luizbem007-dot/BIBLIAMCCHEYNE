@@ -773,201 +773,208 @@ export const siteConfig = {
   testimonials: [
     {
       id: "1",
-      name: "Alex Rivera",
-      role: "CTO at InnovateTech",
-      img: "https://randomuser.me/api/portraits/men/91.jpg",
+      name: "Pr. Renato Oliveira",
+      role: "Pastor há 22 anos",
+      img: "https://randomuser.me/api/portraits/men/32.jpg",
       description: (
         <p>
-          The AI-driven analytics from #QuantumInsights have revolutionized our
-          product development cycle.
+          Eu já tinha vergonha de admitir que nunca li a Bíblia inteira, mesmo
+          sendo pastor.
           <Highlight>
-            Insights are now more accurate and faster than ever.
+            Com o método McCheyne, completei em 11 meses — e chorei no último
+            dia.
           </Highlight>{" "}
-          A game-changer for tech companies.
+          Minha pregação mudou completamente.
         </p>
       ),
     },
     {
       id: "2",
-      name: "Samantha Lee",
-      role: "Marketing Director at NextGen Solutions",
-      img: "https://randomuser.me/api/portraits/women/12.jpg",
+      name: "Ana Beatriz Santos",
+      role: "Professora e mãe de 3",
+      img: "https://randomuser.me/api/portraits/women/44.jpg",
       description: (
         <p>
-          Implementing #AIStream&apos;s customer prediction model has
-          drastically improved our targeting strategy.
-          <Highlight>Seeing a 50% increase in conversion rates!</Highlight>{" "}
-          Highly recommend their solutions.
+          Com três filhos pequenos, eu achava impossível ter um devocional
+          consistente.
+          <Highlight>
+            15 minutos por dia mudaram minha rotina e minha paz interior.
+          </Highlight>{" "}
+          Hoje é o melhor momento do meu dia.
         </p>
       ),
     },
     {
       id: "3",
-      name: "Raj Patel",
-      role: "Founder & CEO at StartUp Grid",
-      img: "https://randomuser.me/api/portraits/men/45.jpg",
+      name: "Lucas Ferreira",
+      role: "Empresário",
+      img: "https://randomuser.me/api/portraits/men/75.jpg",
       description: (
         <p>
-          As a startup, we need to move fast and stay ahead. #CodeAI&apos;s
-          automated coding assistant helps us do just that.
-          <Highlight>Our development speed has doubled.</Highlight> Essential
-          tool for any startup.
+          Eu lia a Bíblia de forma aleatória, sem direção. Sempre parava em
+          Levítico.
+          <Highlight>
+            O plano McCheyne me deu um mapa claro — e pela primeira vez, terminei
+            o ano inteiro.
+          </Highlight>{" "}
+          Recomendo a todos.
         </p>
       ),
     },
     {
       id: "4",
-      name: "Emily Chen",
-      role: "Product Manager at Digital Wave",
-      img: "https://randomuser.me/api/portraits/women/83.jpg",
+      name: "Débora Cristina Lima",
+      role: "Líder de célula",
+      img: "https://randomuser.me/api/portraits/women/68.jpg",
       description: (
         <p>
-          #VoiceGen&apos;s AI-driven voice synthesis has made creating global
-          products a breeze.
-          <Highlight>Localization is now seamless and efficient.</Highlight> A
-          must-have for global product teams.
+          O que mais me impactou foi ler o Antigo e o Novo Testamento no mesmo
+          dia.
+          <Highlight>
+            Os textos se conectam de um jeito sobrenatural. É como se Deus
+            falasse direto comigo.
+          </Highlight>{" "}
+          Nunca mais larguei.
         </p>
       ),
     },
     {
       id: "5",
-      name: "Michael Brown",
-      role: "Data Scientist at FinTech Innovations",
-      img: "https://randomuser.me/api/portraits/men/1.jpg",
+      name: "Marcos Vinícius Souza",
+      role: "Seminarista",
+      img: "https://randomuser.me/api/portraits/men/22.jpg",
       description: (
         <p>
-          Leveraging #DataCrunch&apos;s AI for our financial models has given us
-          an edge in predictive accuracy.
+          Estudava teologia mas sentia a Palavra distante do coração.
           <Highlight>
-            Our investment strategies are now powered by real-time data
-            analytics.
+            O devocional McCheyne trouxe de volta o fogo que eu tinha perdido.
           </Highlight>{" "}
-          Transformative for the finance industry.
+          Hoje leio com fome, não por obrigação.
         </p>
       ),
     },
     {
       id: "6",
-      name: "Linda Wu",
-      role: "VP of Operations at LogiChain Solutions",
-      img: "https://randomuser.me/api/portraits/women/5.jpg",
+      name: "Camila Rodrigues",
+      role: "Médica e missionária",
+      img: "https://randomuser.me/api/portraits/women/26.jpg",
       description: (
         <p>
-          #LogiTech&apos;s supply chain optimization tools have drastically
-          reduced our operational costs.
+          Na correria dos plantões, eu precisava de algo prático e profundo ao
+          mesmo tempo.
           <Highlight>
-            Efficiency and accuracy in logistics have never been better.
+            Em 15 minutos, recebo a porção exata que minha alma precisa.
           </Highlight>{" "}
+          Essa Bíblia salvou meu devocional.
         </p>
       ),
     },
     {
       id: "7",
-      name: "Carlos Gomez",
-      role: "Head of R&D at EcoInnovate",
-      img: "https://randomuser.me/api/portraits/men/14.jpg",
+      name: "Pedro Henrique Alves",
+      role: "Universitário",
+      img: "https://randomuser.me/api/portraits/men/85.jpg",
       description: (
         <p>
-          By integrating #GreenTech&apos;s sustainable energy solutions,
-          we&apos;ve seen a significant reduction in carbon footprint.
+          Meus amigos da faculdade achavam que eu não ia conseguir manter.
           <Highlight>
-            Leading the way in eco-friendly business practices.
+            Hoje estou no segundo ano consecutivo lendo a Bíblia inteira.
           </Highlight>{" "}
-          Pioneering change in the industry.
+          O método é simples, mas poderoso demais.
         </p>
       ),
     },
     {
       id: "8",
-      name: "Aisha Khan",
-      role: "Chief Marketing Officer at Fashion Forward",
-      img: "https://randomuser.me/api/portraits/women/56.jpg",
+      name: "Raquel Mendes",
+      role: "Musicista e adoradora",
+      img: "https://randomuser.me/api/portraits/women/90.jpg",
       description: (
         <p>
-          #TrendSetter&apos;s market analysis AI has transformed how we approach
-          fashion trends.
+          Minha adoração era vazia porque eu não conhecia a Palavra de verdade.
           <Highlight>
-            Our campaigns are now data-driven with higher customer engagement.
+            Depois do McCheyne, cada louvor que canto tem raiz bíblica.
           </Highlight>{" "}
-          Revolutionizing fashion marketing.
+          Transformou meu ministério por completo.
         </p>
       ),
     },
     {
       id: "9",
-      name: "Tom Chen",
-      role: "Director of IT at HealthTech Solutions",
-      img: "https://randomuser.me/api/portraits/men/18.jpg",
+      name: "Tiago Costa",
+      role: "Pai de família",
+      img: "https://randomuser.me/api/portraits/men/36.jpg",
       description: (
         <p>
-          Implementing #MediCareAI in our patient care systems has improved
-          patient outcomes significantly.
+          Comecei sozinho e em 3 meses minha esposa e meus dois filhos já
+          estavam lendo junto.
           <Highlight>
-            Technology and healthcare working hand in hand for better health.
+            O culto doméstico da nossa casa renasceu por causa dessa Bíblia.
           </Highlight>{" "}
-          A milestone in medical technology.
+          Uma benção para a família inteira.
         </p>
       ),
     },
     {
       id: "10",
-      name: "Sofia Patel",
-      role: "CEO at EduTech Innovations",
-      img: "https://randomuser.me/api/portraits/women/73.jpg",
+      name: "Juliana Monteiro",
+      role: "Advogada",
+      img: "https://randomuser.me/api/portraits/women/32.jpg",
       description: (
         <p>
-          #LearnSmart&apos;s AI-driven personalized learning plans have doubled
-          student performance metrics.
+          Sempre quis ser mais disciplinada na leitura, mas faltava um plano
+          que funcionasse de verdade.
           <Highlight>
-            Education tailored to every learner&apos;s needs.
+            O McCheyne me deu estrutura sem tirar a liberdade do Espírito.
           </Highlight>{" "}
-          Transforming the educational landscape.
+          Melhor investimento que já fiz.
         </p>
       ),
     },
     {
       id: "11",
-      name: "Jake Morrison",
-      role: "CTO at SecureNet Tech",
-      img: "https://randomuser.me/api/portraits/men/25.jpg",
+      name: "Gabriel Nascimento",
+      role: "Líder de jovens",
+      img: "https://randomuser.me/api/portraits/men/46.jpg",
       description: (
         <p>
-          With #CyberShield&apos;s AI-powered security systems, our data
-          protection levels are unmatched.
+          Apresentei o método para o grupo de jovens da igreja.
           <Highlight>
-            Ensuring safety and trust in digital spaces.
+            Em 6 meses, o nível das conversas e da maturidade espiritual mudou
+            radicalmente.
           </Highlight>{" "}
-          Redefining cybersecurity standards.
+          Jovens lendo a Bíblia inteira — isso é avivamento.
         </p>
       ),
     },
     {
       id: "12",
-      name: "Nadia Ali",
-      role: "Product Manager at Creative Solutions",
-      img: "https://randomuser.me/api/portraits/women/78.jpg",
+      name: "Fernanda Oliveira",
+      role: "Dona de casa",
+      img: "https://randomuser.me/api/portraits/women/17.jpg",
       description: (
         <p>
-          #DesignPro&apos;s AI has streamlined our creative process, enhancing
-          productivity and innovation.
-          <Highlight>Bringing creativity and technology together.</Highlight> A
-          game-changer for creative industries.
+          Eu achava que precisava de horas para ter um devocional de qualidade.
+          <Highlight>
+            Com 15 minutos e 4 porções diárias, Deus fala mais do que em anos
+            de leitura avulsa.
+          </Highlight>{" "}
+          Simples, bonito e transformador.
         </p>
       ),
     },
     {
       id: "13",
-      name: "Omar Farooq",
-      role: "Founder at Startup Hub",
-      img: "https://randomuser.me/api/portraits/men/54.jpg",
+      name: "André Luís Ribeiro",
+      role: "Diácono",
+      img: "https://randomuser.me/api/portraits/men/52.jpg",
       description: (
         <p>
-          #VentureAI&apos;s insights into startup ecosystems have been
-          invaluable for our growth and funding strategies.
+          Comprei para mim e depois presenteei mais 5 irmãos da igreja.
           <Highlight>
-            Empowering startups with data-driven decisions.
+            Todos completaram a leitura no primeiro ano. Nunca vi nada igual.
           </Highlight>{" "}
-          A catalyst for startup success.
+          Essa Bíblia muda vidas — posso testemunhar.
         </p>
       ),
     },
