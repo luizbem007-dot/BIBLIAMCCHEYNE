@@ -48,10 +48,10 @@ export const siteConfig = {
   },
   nav: {
     links: [
-      { id: 1, name: "Home", href: "#hero" },
-      { id: 2, name: "How it Works", href: "#bento" },
-      { id: 3, name: "Features", href: "#features" },
-      { id: 4, name: "Pricing", href: "#pricing" },
+      { id: 1, name: "Início", href: "#hero" },
+      { id: 2, name: "Como Funciona", href: "#bento" },
+      { id: 3, name: "O Método", href: "#features" },
+      { id: 4, name: "Garantir a Minha", href: "#pricing" },
     ],
   },
   hero: {
@@ -70,7 +70,7 @@ export const siteConfig = {
       </svg>
     ),
     badge: "Método de leitura bíblica comprovado",
-    title: "Leia a Bíblia Inteira em 1 Ano, Investindo Apenas 15 Minutos por Dia",
+    title: (<>Leia a Bíblia Inteira em<br />1 Ano, Investindo Apenas<br />15 Minutos por Dia</>),
     description:
       "O método histórico que conecta o Antigo e o Novo Testamento diariamente que faz você experimentar diariamente uma transformação em sua vida",
     cta: {
@@ -295,32 +295,28 @@ export const siteConfig = {
         title: "Gênesis 1: A Criação",
         content:
           "O seu devocional começa nas fundações da fé. Você contempla a criação do mundo e entende o princípio do plano perfeito de Deus.",
-        image:
-          "https://images.unsplash.com/photo-1720371300677-ba4838fa0678?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        image: "/freepik__prompt-a-topdown-flatlay-photograph-of-the-black-m__61741.jpeg",
       },
       {
         id: 2,
         title: "Mateus 1: O Evangelho",
         content:
           "No mesmo dia, você avança para o Novo Testamento e contempla a nova criação em Cristo. A Palavra se conecta na sua mente.",
-        image:
-          "https://images.unsplash.com/photo-1686170287433-c95faf6d3608?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwzfHx8ZW58MHx8fHx8fA%3D%3D",
+        image: "/freepik__prompt-a-photograph-of-the-blue-mccheyne-bible-res__61750.jpeg",
       },
       {
         id: 3,
         title: "Esdras 1: A Restauração",
         content:
           "A terceira porção traz o retorno do povo cativo. Uma leitura viva, direto da Palavra, que renova a esperança em dias difíceis.",
-        image:
-          "https://images.unsplash.com/photo-1720378042271-60aff1e1c538?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxMHx8fGVufDB8fHx8fA%3D%3D",
+        image: "/freepik__prompt-a-photorealistic-interior-shot-of-the-red-m__61747.jpeg",
       },
       {
         id: 4,
         title: "Atos 1: A Igreja",
         content:
           "Você fecha a leitura vendo o poder do Espírito Santo no nascimento da Igreja, trazendo o avivamento para dentro do seu quarto.",
-        image:
-          "https://images.unsplash.com/photo-1666882990322-e7f3b8df4f75?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDF8fHxlbnwwfHx8fHw%3D",
+        image: "/biblia-trio-premium.jpg",
       },
     ],
   },
@@ -331,14 +327,26 @@ export const siteConfig = {
     items: [
       {
         id: 1,
-        content: <FirstBentoAnimation />,
+        content: (
+          <img
+            src="/freepik__prompt-a-candid-photorealistic-shot-of-a-mans-hand__61742.jpeg"
+            alt="A Bíblia de Capa a Capa"
+            className="w-full h-full object-cover"
+          />
+        ),
         title: "A Bíblia de Capa a Capa",
         description:
           "Finalmente, você vai terminar o ano sabendo que leu a Palavra inteira. Sem culpa, sem pular páginas e sem travar nos livros mais densos.",
       },
       {
         id: 2,
-        content: <SecondBentoAnimation />,
+        content: (
+          <img
+            src="/freepik__prompt-a-highangle-photograph-looking-down-at-the-__61754.jpeg"
+            alt="A Bíblia Explica a Própria Bíblia"
+            className="w-full h-full object-cover"
+          />
+        ),
         title: "A Bíblia Explica a Própria Bíblia",
         description:
           "Esse é o grande diferencial: ao ler o Antigo e o Novo Testamento no mesmo dia, os textos se conectam. Você entende o contexto sem precisar de teologia complicada.",
@@ -346,11 +354,10 @@ export const siteConfig = {
       {
         id: 3,
         content: (
-          <ThirdBentoAnimation
-            data={[20, 30, 25, 45, 40, 55, 75]}
-            toolTipValues={[
-              1234, 1678, 2101, 2534, 2967, 3400, 3833, 4266, 4700, 5133,
-            ]}
+          <img
+            src="/freepik__prompt-a-photograph-of-the-three-mccheyne-bibles-s__61755.jpeg"
+            alt="O Fim do O Que Ler Hoje"
+            className="w-full h-full object-cover"
           />
         ),
         title: "O Fim do \"O Que Ler Hoje?\"",
@@ -359,7 +366,13 @@ export const siteConfig = {
       },
       {
         id: 4,
-        content: <FourthBentoAnimation once={false} />,
+        content: (
+          <img
+            src="/freepik__prompt-a-photorealistic-shot-of-female-hands-gentl__61752.jpeg"
+            alt="Apenas 15 Minutos Diários"
+            className="w-full h-full object-cover"
+          />
+        ),
         title: "Apenas 15 Minutos Diários",
         description:
           "Esqueça a força bruta e as metas irreais. É um método leve, feito para a rotina corrida, entregando a porção perfeita de alimento para a sua mente cansada.",
