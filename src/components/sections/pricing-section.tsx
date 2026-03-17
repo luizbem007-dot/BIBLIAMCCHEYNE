@@ -7,80 +7,64 @@ export function PricingSection() {
   return (
     <section
       id="pricing"
-      className="flex flex-col items-center justify-center gap-10 py-20 w-full relative bg-[#F9FAFB] dark:bg-background"
+      className="flex flex-col items-center justify-center gap-8 py-16 md:py-20 w-full relative"
     >
-      {/* Header */}
-      <div className="flex flex-col items-center gap-3 px-6">
-        <h2 className="text-3xl md:text-4xl font-medium tracking-tighter text-center text-balance text-primary">
-          A Sua Transformação Começa Hoje.
-        </h2>
-        <p className="text-muted-foreground text-center text-balance font-medium max-w-lg">
-          Não adie mais a sua vida espiritual. Oferta especial de lançamento com
-          preço único e sem mensalidades.
-        </p>
-      </div>
+      {/* Card Central - sem subfundo, direto no background */}
+      <div className="w-full max-w-md mx-auto px-4">
+        {/* Imagem destaque */}
+        <div className="w-full rounded-t-3xl overflow-hidden">
+          <img
+            src="/VENDAA.webp"
+            alt="Bíblia Devocional McCheyne"
+            className="w-full h-auto object-cover"
+          />
+        </div>
 
-      {/* Card Central */}
-      <div className="w-full max-w-lg mx-auto px-4 sm:px-6">
-        <div className="bg-white dark:bg-accent rounded-2xl shadow-[0_8px_40px_-12px_rgba(0,0,0,0.12)] border border-border/50 overflow-hidden">
-          {/* Imagem da Bíblia */}
-          <div className="w-full">
-            <img
-              src="/VENDAA.webp"
-              alt="Bíblia Devocional McCheyne"
-              className="w-full h-auto object-cover"
-            />
+        {/* Conteúdo */}
+        <div className="flex flex-col items-center gap-5 pt-8 pb-4">
+          {/* Badge animado */}
+          <div className="group inline-flex items-center gap-2 rounded-full border border-black/5 bg-white px-5 py-2 text-sm shadow-[inset_0_-8px_10px_#8fdfff1f] backdrop-blur-sm dark:border-white/5 dark:bg-black">
+            <span>🏆</span>
+            <span className="mx-1 h-4 w-px bg-gray-300 dark:bg-gray-600" />
+            <AnimatedGradientText colorFrom="#680d3a" colorTo="#b8860b" speed={2} className="font-semibold">O Plano Completo de 1 Ano</AnimatedGradientText>
           </div>
 
-          {/* Badge + Título + Preço */}
-          <div className="flex flex-col items-center gap-4 pt-8 pb-6 px-4 sm:px-6">
-            <div className="group inline-flex items-center gap-2 rounded-full border border-black/5 bg-white px-5 py-2 text-sm shadow-[inset_0_-8px_10px_#8fdfff1f] backdrop-blur-sm transition-all hover:shadow-[inset_0_-5px_10px_#8fdfff3f] dark:border-white/5 dark:bg-black">
-              <span>🏆</span>
-              <span className="mx-1 h-4 w-px bg-gray-300 dark:bg-gray-600" />
-              <AnimatedGradientText colorFrom="#680d3a" colorTo="#b8860b" speed={2} className="font-semibold">O Plano Completo de 1 Ano</AnimatedGradientText>
-              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className="ml-1 text-gray-400"><path d="M4.5 2.25L8.25 6L4.5 9.75" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+          {/* Preço - destaque visual */}
+          <div className="flex flex-col items-center gap-2">
+            <span className="text-base text-muted-foreground line-through decoration-red-400/60">
+              R$ 87,00
+            </span>
+            <div className="relative">
+              <span className="text-6xl sm:text-7xl font-black tracking-tighter text-primary">
+                R$80
+              </span>
             </div>
-            <h3 className="text-xl md:text-2xl font-semibold tracking-tight text-primary text-center">
-              Bíblia Devocional McCheyne
-            </h3>
-            <div className="flex flex-col items-center gap-2">
-              <div className="flex items-baseline gap-1">
-                <span className="text-sm text-muted-foreground mr-1">Por apenas</span>
-                <span className="text-5xl md:text-6xl font-bold tracking-tighter text-primary">
-                  R$ 80
-                </span>
-                <span className="text-2xl font-semibold text-primary">,00</span>
-              </div>
-              <p className="text-sm text-muted-foreground">
-                pagamento único | sem taxas escondidas
-              </p>
-              <p className="text-xs text-muted-foreground/70 mt-1">
-                Menos de R$ 0,22 por dia de leitura guiada durante 1 ano inteiro
-              </p>
-            </div>
-          </div>
-
-          {/* CTA */}
-          <div className="px-4 sm:px-6 pb-8">
-            <Link href="#" className="block w-full">
-              <ShimmerButton
-                background="#680d3a"
-                shimmerColor="#b8860b"
-                shimmerSize="0.05em"
-                shimmerDuration="2.5s"
-                className="w-full h-14 text-xs sm:text-sm md:text-base font-semibold tracking-wide"
-              >
-                SIM, QUERO GARANTIR MINHA BÍBLIA POR R$ 80
-              </ShimmerButton>
-            </Link>
+            <span className="text-sm text-muted-foreground font-medium tracking-wide uppercase">
+              pagamento único
+            </span>
           </div>
         </div>
-      </div>
 
-      {/* Garantia */}
-      <div className="flex items-center gap-2 text-muted-foreground px-6">
-        <ShieldCheck className="size-5 text-secondary/60" />
-        <span className="text-sm">Compra 100% segura com garantia de satisfação</span>
+        {/* CTA */}
+        <div className="pt-2 pb-6">
+          <Link href="#" className="block w-full">
+            <ShimmerButton
+              background="#680d3a"
+              shimmerColor="#b8860b"
+              shimmerSize="0.05em"
+              shimmerDuration="2s"
+              className="w-full h-14 sm:h-16 text-sm sm:text-base font-bold tracking-wide uppercase"
+            >
+              Aproveite Agora — R$80
+            </ShimmerButton>
+          </Link>
+        </div>
+
+        {/* Garantia */}
+        <div className="flex items-center justify-center gap-2 text-muted-foreground pb-2">
+          <ShieldCheck className="size-4 text-secondary/70" />
+          <span className="text-xs">Compra 100% segura • Garantia de satisfação</span>
+        </div>
       </div>
     </section>
   );

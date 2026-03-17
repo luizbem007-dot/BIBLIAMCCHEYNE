@@ -68,7 +68,7 @@ export const siteConfig = {
     badge: "Método de leitura bíblica comprovado",
     title: (<>Leia a Bíblia Inteira em<br />1 Ano, Investindo Apenas<br />15 Minutos por Dia</>),
     description:
-      "O método com mais de 180 anos que conecta o Antigo e o Novo Testamento diariamente, trazendo clareza mental, profundidade teológica e paz interior — em apenas 15 minutos",
+      "O método histórico que conecta o Antigo e o Novo Testamento diariamente que faz você experimentar diariamente uma transformação em sua vida",
     cta: {
       primary: {
         text: "Quero Agora",
@@ -319,7 +319,7 @@ export const siteConfig = {
   bentoSection: {
     title: "O Segredo Por Trás do Método",
     description:
-      "Não é uma modinha. Há mais de 180 anos, gigantes da fé como Spurgeon, Lloyd-Jones e milhares de cristãos fiéis usam este método para vencer a inconstância e receber todos os dias uma porção viva da Palavra.",
+      "Há mais de 180 anos, homens de Deus usam este método para vencer a inconstância e receber todos os dias uma porção viva da Palavra e uma verdadeira transformação na sua vida.",
     items: [
       {
         id: 1,
@@ -1019,12 +1019,6 @@ export const siteConfig = {
         question: "Como funciona o envio e a entrega?",
         answer:
           "Assim que o seu pagamento for aprovado, o seu pedido será processado e despachado com todo o cuidado. Você receberá um código de rastreio no seu e-mail para acompanhar a viagem da sua Bíblia passo a passo até chegar em suas mãos.",
-      },
-      {
-        id: 7,
-        question: "E se eu falhar um dia e não conseguir ler?",
-        answer:
-          "Sem problema nenhum — e sem culpa. O método McCheyne é resiliente. Se você perder um dia, basta retomar no dia seguinte de onde parou. Não existe \"atraso\" nem penalidade. O plano foi desenhado para a vida real, não para a perfeição. O importante é a constância, não a rigidez.",
       },
     ],
   },
