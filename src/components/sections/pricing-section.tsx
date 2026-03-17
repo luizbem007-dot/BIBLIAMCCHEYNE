@@ -1,3 +1,5 @@
+import { AnimatedGradientText } from "@/components/ui/animated-gradient-text";
+import { ShimmerButton } from "@/components/ui/shimmer-button";
 import { ShieldCheck } from "lucide-react";
 import Link from "next/link";
 
@@ -32,8 +34,8 @@ export function PricingSection() {
 
           {/* Badge + Título + Preço */}
           <div className="flex flex-col items-center gap-4 pt-8 pb-6 px-4 sm:px-6">
-            <span className="inline-flex items-center gap-1.5 bg-secondary/10 text-secondary text-sm font-semibold px-4 py-1.5 rounded-full">
-              🏆 O Plano Completo de 1 Ano
+            <span className="inline-flex items-center gap-1.5 bg-secondary/10 text-sm font-semibold px-4 py-1.5 rounded-full">
+              🏆 <AnimatedGradientText colorFrom="#680d3a" colorTo="#b8860b" speed={2}>O Plano Completo de 1 Ano</AnimatedGradientText>
             </span>
             <h3 className="text-xl md:text-2xl font-semibold tracking-tight text-primary text-center">
               Bíblia Devocional McCheyne
@@ -57,11 +59,16 @@ export function PricingSection() {
 
           {/* CTA */}
           <div className="px-4 sm:px-6 pb-8">
-            <Link
-              href="#"
-              className="w-full h-14 flex items-center justify-center text-xs sm:text-sm md:text-base font-semibold tracking-wide rounded-full text-white bg-secondary hover:bg-secondary/90 transition-all ease-out active:scale-[0.98] shadow-[inset_0_1px_2px_rgba(255,255,255,0.25),0_3px_3px_-1.5px_rgba(16,24,40,0.06),0_1px_1px_rgba(16,24,40,0.08)] px-4"
-            >
-              SIM, QUERO GARANTIR MINHA BÍBLIA POR R$ 80
+            <Link href="#" className="block w-full">
+              <ShimmerButton
+                background="#680d3a"
+                shimmerColor="#b8860b"
+                shimmerSize="0.05em"
+                shimmerDuration="2.5s"
+                className="w-full h-14 text-xs sm:text-sm md:text-base font-semibold tracking-wide"
+              >
+                SIM, QUERO GARANTIR MINHA BÍBLIA POR R$ 80
+              </ShimmerButton>
             </Link>
           </div>
         </div>
