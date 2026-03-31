@@ -52,7 +52,7 @@ export function PricingSection() {
 
         {/* CTA */}
         <div className="pt-2 pb-6">
-          <Link href="#" className="block w-full">
+          <Link href="https://marcaseditora.com.br/produtos/?brand=Cpp" target="_blank" rel="noopener noreferrer" className="block w-full">
             <ShimmerButton
               background="#680d3a"
               shimmerColor="#b8860b"
