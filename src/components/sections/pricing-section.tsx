@@ -18,10 +18,10 @@ export function PricingSection() {
         </h2>
 
         {/* Imagem destaque */}
-        <div className="w-full rounded-t-3xl overflow-hidden relative aspect-[3/4]">
+        <div className="w-full rounded-t-3xl overflow-hidden relative aspect-[4/3]">
           <Image
-            src="/VENDAA.webp"
-            alt="Bíblia Devocional McCheyne"
+            src="/biblia-trio-premium.jpg"
+            alt="Bíblia Devocional McCheyne - Trio Premium"
             fill
             className="object-cover"
             priority
