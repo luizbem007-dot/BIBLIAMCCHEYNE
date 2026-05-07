@@ -1,4 +1,5 @@
 import dynamic from "next/dynamic";
+import { ConversionTracker } from "@/components/conversion-tracker";
 import { HeroSection } from "@/components/sections/hero-section";
 
 const BentoSection       = dynamic(() => import("@/components/sections/bento-section").then(m => ({ default: m.BentoSection })));
@@ -12,6 +13,7 @@ const FooterSection      = dynamic(() => import("@/components/sections/footer-se
 export default function Home() {
   return (
     <main className="flex flex-col items-center justify-center divide-y divide-border min-h-screen w-full">
+      <ConversionTracker />
       <HeroSection />
       <BentoSection />
       <QuoteSection />

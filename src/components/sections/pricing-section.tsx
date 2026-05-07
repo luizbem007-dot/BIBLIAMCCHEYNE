@@ -1,8 +1,7 @@
+import { BuyButton } from "@/components/buy-button";
 import { AnimatedGradientText } from "@/components/ui/animated-gradient-text";
-import { ShimmerButton } from "@/components/ui/shimmer-button";
 import { ShieldCheck } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
 
 export function PricingSection() {
   return (
@@ -55,17 +54,7 @@ export function PricingSection() {
 
         {/* CTA */}
         <div className="pt-2 pb-6">
-          <Link href="https://marcaseditora.com.br/produtos/?brand=Cpp" target="_blank" rel="noopener noreferrer" className="block w-full">
-            <ShimmerButton
-              background="#680d3a"
-              shimmerColor="#b8860b"
-              shimmerSize="0.05em"
-              shimmerDuration="2s"
-              className="w-full h-14 sm:h-16 text-sm sm:text-base font-bold tracking-wide uppercase"
-            >
-              Aproveite Agora — R$80
-            </ShimmerButton>
-          </Link>
+          <BuyButton />
         </div>
 
         {/* Garantia */}
