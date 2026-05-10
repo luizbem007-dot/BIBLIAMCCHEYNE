@@ -3,7 +3,7 @@ import { ImageResponse } from "next/og";
 
 // Configuration exports
 export const runtime = "edge";
-export const alt = "SkyAgent - AI-powered agents with Magic UI";
+export const alt = "Bíblia Devocional McCheyne — Leia a Bíblia inteira em 1 ano";
 export const size = {
   width: 1200,
   height: 630,
@@ -31,12 +31,12 @@ export default async function Image() {
           }}
         >
           <img
-            src={`${baseUrl}/agent-template-og.png`}
+            src={`${baseUrl}/og-biblia.jpeg`}
             alt={alt}
             style={{
               width: "100%",
               height: "100%",
-              objectFit: "contain",
+              objectFit: "cover",
             }}
           />
         </div>

@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 export interface TestimonialCardProps
   extends React.HTMLAttributes<HTMLDivElement> {
   name: string;
-  role: string;
+  role?: string;
   img?: string;
   description: React.ReactNode;
   className?: string;
@@ -47,7 +47,7 @@ export const TestimonialCard = ({
 interface Testimonial {
   id: string;
   name: string;
-  role: string;
+  role?: string;
   img: string;
   description: React.ReactNode;
 }

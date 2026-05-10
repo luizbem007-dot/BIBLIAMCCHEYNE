@@ -790,208 +790,178 @@ export const siteConfig = {
   testimonials: [
     {
       id: "1",
-      name: "Pr. Renato Oliveira",
-      role: "Pastor há 22 anos",
-      img: "https://randomuser.me/api/portraits/men/32.jpg",
+      name: "Carol Rocha",
+      img: "/testimonials/carol.jpg",
       description: (
         <p>
-          Eu já tinha vergonha de admitir que nunca li a Bíblia inteira, mesmo
-          sendo pastor.
+          O momento mais especial do dia é sentar à mesa com minha família para
+          lermos o devocional.{" "}
           <Highlight>
-            Com o método McCheyne, completei em 11 meses — e chorei no último
-            dia.
-          </Highlight>{" "}
-          Minha pregação mudou completamente.
+            Um tempo tão precioso que nos une. Louvado seja o Senhor por esse
+            privilégio!
+          </Highlight>
         </p>
       ),
     },
     {
       id: "2",
-      name: "Ana Beatriz Santos",
-      role: "Professora e mãe de 3",
-      img: "https://randomuser.me/api/portraits/women/44.jpg",
+      name: "Erieli Cristo",
+      img: "/testimonials/erieli.jpg",
       description: (
         <p>
-          Com três filhos pequenos, eu achava impossível ter um devocional
-          consistente.
+          Faço a leitura da bíblia devocional com o meu filho desde quando ele
+          estava no meu ventre.{" "}
           <Highlight>
-            15 minutos por dia mudaram minha rotina e minha paz interior.
-          </Highlight>{" "}
-          Hoje é o melhor momento do meu dia.
+            Hoje ele está com 8 anos de idade — e 8 anos de devocional!
+          </Highlight>
         </p>
       ),
     },
     {
       id: "3",
-      name: "Lucas Ferreira",
-      role: "Empresário",
-      img: "https://randomuser.me/api/portraits/men/75.jpg",
+      name: "Maria Marta Carvalho",
+      img: "/testimonials/mariamarta.jpg",
       description: (
         <p>
-          Eu lia a Bíblia de forma aleatória, sem direção. Sempre parava em
-          Levítico.
-          <Highlight>
-            O plano McCheyne me deu um mapa claro — e pela primeira vez, terminei
-            o ano inteiro.
-          </Highlight>{" "}
-          Recomendo a todos.
+          Eu estava perdida quando te encontrei...{" "}
+          <Highlight>A verdadeira palavra, que liberta.</Highlight> É um
+          alimento diário que nutre e fortalece nossa vida todos os dias.
         </p>
       ),
     },
     {
       id: "4",
-      name: "Débora Cristina Lima",
-      role: "Líder de célula",
-      img: "https://randomuser.me/api/portraits/women/68.jpg",
+      name: "Thaylanna Diniz",
+      img: "/testimonials/thaylanna.jpg",
       description: (
         <p>
-          O que mais me impactou foi ler o Antigo e o Novo Testamento no mesmo
-          dia.
+          Que essa seja a nossa amiga diária nesses 365 dias.{" "}
           <Highlight>
-            Os textos se conectam de um jeito sobrenatural. É como se Deus
-            falasse direto comigo.
+            Leia a palavra e perceba a modificação que isso fará em seu
+            interior.
           </Highlight>{" "}
-          Nunca mais larguei.
+          Só leia e deixe que o Espírito Santo faça a obra.
         </p>
       ),
     },
     {
       id: "5",
-      name: "Marcos Vinícius Souza",
-      role: "Seminarista",
-      img: "https://randomuser.me/api/portraits/men/22.jpg",
+      name: "Romulo Moraes",
+      img: "/testimonials/romulomoraes.jpg",
       description: (
         <p>
-          Estudava teologia mas sentia a Palavra distante do coração.
           <Highlight>
-            O devocional McCheyne trouxe de volta o fogo que eu tinha perdido.
+            Quantos ensinamentos emanam das sagradas escrituras. Meu Deus!
           </Highlight>{" "}
-          Hoje leio com fome, não por obrigação.
+          Cada dia uma porção diferente que alimenta e fortalece a alma.
         </p>
       ),
     },
     {
       id: "6",
-      name: "Camila Rodrigues",
-      role: "Médica e missionária",
-      img: "https://randomuser.me/api/portraits/women/26.jpg",
+      name: "Andreia Furtado",
+      img: "/testimonials/andreia.jpg",
       description: (
         <p>
-          Na correria dos plantões, eu precisava de algo prático e profundo ao
-          mesmo tempo.
+          Acho que vou querer uma de cada cor!!!{" "}
           <Highlight>
-            Em 15 minutos, recebo a porção exata que minha alma precisa.
-          </Highlight>{" "}
-          Essa Bíblia salvou meu devocional.
+            Mas além da beleza, o que mais importa é o quanto esse devocional
+            mudou minha vida espiritual.
+          </Highlight>
         </p>
       ),
     },
     {
       id: "7",
-      name: "Pedro Henrique Alves",
-      role: "Universitário",
-      img: "https://randomuser.me/api/portraits/men/85.jpg",
+      name: "Moni Malerbi",
+      img: "/testimonials/monimalerbi.jpg",
       description: (
         <p>
-          Meus amigos da faculdade achavam que eu não ia conseguir manter.
-          <Highlight>
-            Hoje estou no segundo ano consecutivo lendo a Bíblia inteira.
-          </Highlight>{" "}
-          O método é simples, mas poderoso demais.
+          <Highlight>Meu maior tesouro!</Highlight> Não há presente mais
+          precioso do que a Palavra de Deus organizada e profunda como este
+          devocional. ❤️🔥
         </p>
       ),
     },
     {
       id: "8",
-      name: "Raquel Mendes",
-      role: "Musicista e adoradora",
-      img: "https://randomuser.me/api/portraits/women/90.jpg",
+      name: "Paloma Ninio",
+      img: "/testimonials/paloma.jpg",
       description: (
         <p>
-          Minha adoração era vazia porque eu não conhecia a Palavra de verdade.
+          Bíblia linda e a versão é maravilhosa.{" "}
           <Highlight>
-            Depois do McCheyne, cada louvor que canto tem raiz bíblica.
-          </Highlight>{" "}
-          Transformou meu ministério por completo.
+            Um português atual, mas sem perder o estilo clássico — reverência
+            e clareza juntos.
+          </Highlight>
         </p>
       ),
     },
     {
       id: "9",
-      name: "Tiago Costa",
-      role: "Pai de família",
-      img: "https://randomuser.me/api/portraits/men/36.jpg",
+      name: "Pr. Jairo Carvalho",
+      img: "/testimonials/jairo.jpg",
       description: (
         <p>
-          Comecei sozinho e em 3 meses minha esposa e meus dois filhos já
-          estavam lendo junto.
           <Highlight>
-            O culto doméstico da nossa casa renasceu por causa dessa Bíblia.
+            O devocional mais amado dos grandes homens do passado!
           </Highlight>{" "}
-          Uma benção para a família inteira.
+          McCheyne criou um método que atravessa séculos e continua
+          transformando vidas até hoje.
         </p>
       ),
     },
     {
       id: "10",
-      name: "Juliana Monteiro",
-      role: "Advogada",
-      img: "https://randomuser.me/api/portraits/women/32.jpg",
+      name: "Jaciana Arruda",
+      img: "/testimonials/jaciana.jpg",
       description: (
         <p>
-          Sempre quis ser mais disciplinada na leitura, mas faltava um plano
-          que funcionasse de verdade.
+          Tem testemunhos incríveis sobre essa Bíblia Devocional McCheyne.{" "}
           <Highlight>
-            O McCheyne me deu estrutura sem tirar a liberdade do Espírito.
-          </Highlight>{" "}
-          Melhor investimento que já fiz.
+            Com certeza a MELHOR e única para quem quer crescer de verdade na
+            fé!
+          </Highlight>
         </p>
       ),
     },
     {
       id: "11",
-      name: "Gabriel Nascimento",
-      role: "Líder de jovens",
-      img: "https://randomuser.me/api/portraits/men/46.jpg",
+      name: "Rodrigo",
+      img: "/testimonials/rodrigo.jpg",
       description: (
         <p>
-          Apresentei o método para o grupo de jovens da igreja.
           <Highlight>
-            Em 6 meses, o nível das conversas e da maturidade espiritual mudou
-            radicalmente.
+            A palavra de Deus é maravilhosa em cada detalhe.
           </Highlight>{" "}
-          Jovens lendo a Bíblia inteira — isso é avivamento.
+          Este devocional me ajuda a manter a consistência e a profundidade
+          que eu precisava na leitura. 🙏
         </p>
       ),
     },
     {
       id: "12",
-      name: "Fernanda Oliveira",
-      role: "Dona de casa",
-      img: "https://randomuser.me/api/portraits/women/17.jpg",
+      name: "Genilda de Melo",
+      img: "/testimonials/genilda.jpg",
       description: (
         <p>
-          Eu achava que precisava de horas para ter um devocional de qualidade.
-          <Highlight>
-            Com 15 minutos e 4 porções diárias, Deus fala mais do que em anos
-            de leitura avulsa.
-          </Highlight>{" "}
-          Simples, bonito e transformador.
+          <Highlight>Bíblia perfeita para leitura diária!</Highlight> Não
+          consigo imaginar minha rotina devocional sem o plano McCheyne.
+          Transformou minha relação com a Palavra. 😍
         </p>
       ),
     },
     {
       id: "13",
-      name: "André Luís Ribeiro",
-      role: "Diácono",
-      img: "https://randomuser.me/api/portraits/men/52.jpg",
+      name: "Bruna Vasconcelos",
+      img: "/testimonials/bruna.jpg",
       description: (
         <p>
-          Comprei para mim e depois presenteei mais 5 irmãos da igreja.
+          Eu amo a minha Bíblia McCheyne!{" "}
           <Highlight>
-            Todos completaram a leitura no primeiro ano. Nunca vi nada igual.
-          </Highlight>{" "}
-          Essa Bíblia muda vidas — posso testemunhar.
+            É o presente mais especial que já recebi — todos os dias Deus fala
+            por meio dela.
+          </Highlight>
         </p>
       ),
     },
