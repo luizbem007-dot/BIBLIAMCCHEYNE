@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { McCheyneQuiz } from "./McCheyneQuiz";
 
 export const metadata: Metadata = {
-  title: "Seu caminho de leitura | Bíblia McCheyne",
+  title: "Descubra seu caminho de leitura | Bíblia McCheyne",
   description:
-    "Responda perguntas rápidas e descubra seu caminho para ler a Bíblia inteira em um ano.",
+    "Em menos de dois minutos, entenda o que falta para sua leitura da Bíblia continuar até o fim.",
 };
 
 export default function QuizPage() {

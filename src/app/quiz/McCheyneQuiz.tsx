@@ -5,50 +5,138 @@ import { useEffect, useRef, useState } from "react";
 import "./McCheyneQuiz.css";
 
 type Gender = "Male" | "Female";
-type AnswerId = "sim" | "as-vezes" | "nao";
+type AnswerId = string;
 type Answers = Record<string, AnswerId>;
+
+interface AnswerOption {
+  id: AnswerId;
+  label: string;
+  emoji: string;
+}
 
 interface Question {
   id: string;
+  phase: string;
   text: string;
   accent: string;
+  options: AnswerOption[];
 }
-
-
-
-const ANSWER_OPTIONS: { id: AnswerId; label: string; emoji: string }[] = [
-  { id: "sim", label: "Sim", emoji: "✓" },
-  { id: "as-vezes", label: "Às vezes", emoji: "◐" },
-  { id: "nao", label: "Não", emoji: "○" },
-];
 
 const QUESTIONS: Question[] = [
   {
-    id: "semana",
-    text: "Você costuma ler a Bíblia durante a semana?",
-    accent: "durante a semana",
+    id: "desejo",
+    phase: "Seu objetivo",
+    text: "Ler a Bíblia inteira é um desejo seu hoje?",
+    accent: "Bíblia inteira",
+    options: [
+      { id: "muito", label: "Sim, muito", emoji: "✦" },
+      { id: "distante", label: "Sim, mas parece distante", emoji: "↗" },
+      { id: "incerto", label: "Ainda não sei", emoji: "○" },
+    ],
   },
   {
-    id: "termina",
-    text: "Você termina os livros bíblicos que começa?",
-    accent: "termina os livros",
+    id: "frequencia",
+    phase: "Sua rotina",
+    text: "Hoje, sua leitura acontece com que frequência?",
+    accent: "que frequência",
+    options: [
+      { id: "quase-todos", label: "Quase todos os dias", emoji: "✓" },
+      { id: "alguns", label: "Alguns dias", emoji: "◐" },
+      { id: "raramente", label: "Raramente", emoji: "○" },
+    ],
   },
   {
-    id: "testamentos",
-    text: "Você lê tanto o Antigo quanto o Novo Testamento?",
-    accent: "Antigo quanto o Novo Testamento",
+    id: "direcao",
+    phase: "Sua rotina",
+    text: "Quando abre a Bíblia, você já sabe exatamente o que ler?",
+    accent: "exatamente o que ler",
+    options: [
+      { id: "quase-sempre", label: "Quase sempre", emoji: "✓" },
+      { id: "as-vezes", label: "Às vezes", emoji: "◐" },
+      { id: "raramente", label: "Raramente", emoji: "○" },
+    ],
   },
   {
-    id: "proximidade",
-    text: "Você se sente próximo da Bíblia como gostaria?",
-    accent: "próximo da Bíblia",
+    id: "plano",
+    phase: "Sua experiência",
+    text: "Você já começou um plano de leitura e parou no caminho?",
+    accent: "parou no caminho",
+    options: [
+      { id: "mais-de-uma", label: "Mais de uma vez", emoji: "↺" },
+      { id: "uma-vez", label: "Uma vez", emoji: "◐" },
+      { id: "nunca", label: "Nunca segui um plano", emoji: "○" },
+    ],
   },
   {
-    id: "ano",
-    text: "Você pensa em ler a Bíblia inteira em um ano?",
-    accent: "inteira em um ano",
+    id: "rotina",
+    phase: "O que interrompe",
+    text: "Quando a semana fica corrida, a leitura costuma ficar para depois?",
+    accent: "ficar para depois",
+    options: [
+      { id: "sim", label: "Sim", emoji: "✓" },
+      { id: "as-vezes", label: "Às vezes", emoji: "◐" },
+      { id: "nao", label: "Não", emoji: "○" },
+    ],
+  },
+  {
+    id: "panorama",
+    phase: "Sua compreensão",
+    text: "Você conhece alguns trechos, mas ainda não enxerga a Bíblia como um todo?",
+    accent: "Bíblia como um todo",
+    options: [
+      { id: "sim", label: "Sim", emoji: "✓" },
+      { id: "em-parte", label: "Em parte", emoji: "◐" },
+      { id: "nao", label: "Não", emoji: "○" },
+    ],
+  },
+  {
+    id: "conclusao",
+    phase: "Sua constância",
+    text: "Você costuma terminar os livros bíblicos que começa?",
+    accent: "terminar os livros",
+    options: [
+      { id: "geralmente", label: "Geralmente", emoji: "✓" },
+      { id: "as-vezes", label: "Às vezes", emoji: "◐" },
+      { id: "raramente", label: "Raramente", emoji: "○" },
+    ],
+  },
+  {
+    id: "sentimento",
+    phase: "Como isso pesa",
+    text: "Quando passam alguns dias sem leitura, o que você sente primeiro?",
+    accent: "o que você sente primeiro",
+    options: [
+      { id: "falta", label: "Sinto falta", emoji: "♡" },
+      { id: "frustracao", label: "Fico frustrado(a)", emoji: "!" },
+      { id: "recomeco", label: "Quero recomeçar", emoji: "↺" },
+      { id: "neutro", label: "Não muda muito", emoji: "○" },
+    ],
+  },
+  {
+    id: "organizacao",
+    phase: "O que ajudaria",
+    text: "Se cada dia já mostrasse exatamente o que ler, isso ajudaria você a continuar?",
+    accent: "exatamente o que ler",
+    options: [
+      { id: "muito", label: "Ajudaria muito", emoji: "✦" },
+      { id: "um-pouco", label: "Ajudaria um pouco", emoji: "◐" },
+      { id: "nao", label: "Não faria diferença", emoji: "○" },
+    ],
+  },
+  {
+    id: "tempo",
+    phase: "Seu próximo passo",
+    text: "Você conseguiria separar 10 minutos por dia se soubesse o que ler?",
+    accent: "10 minutos por dia",
+    options: [
+      { id: "sim", label: "Sim", emoji: "✓" },
+      { id: "maioria", label: "Na maioria dos dias", emoji: "◐" },
+      { id: "incerto", label: "Ainda não sei", emoji: "○" },
+    ],
   },
 ];
+
+const MIDPOINT_INDEX = 4;
 
 const CHECKOUT_URL =
   process.env.NEXT_PUBLIC_MCCHEYNE_CHECKOUT_URL ??
@@ -62,7 +150,7 @@ function track(name: string, props: Record<string, unknown> = {}) {
   if (typeof window === "undefined") return;
   window.dispatchEvent(
     new CustomEvent("mccheyne:quiz", {
-      detail: { name, ...props, funnel: "quiz-mccheyne-v1" },
+      detail: { name, ...props, funnel: "quiz-mccheyne-v2" },
     }),
   );
 }
@@ -146,9 +234,11 @@ function Landing({
     <AppShell className="pc-app--entry">
       <main className="pc-entry pc-reveal">
         <BrandLogo />
-        <p className="pc-entry__pill">Quiz de 2 minutos</p>
-        <h1>Queremos conhecer você.</h1>
-        <p className="pc-entry__subtitle">Você é:</p>
+        <p className="pc-entry__pill">10 perguntas · menos de 2 minutos</p>
+        <h1>
+          Descubra o que falta para sua leitura da Bíblia <span>continuar até o fim.</span>
+        </h1>
+        <p className="pc-entry__subtitle">Para começar, você é:</p>
         <div className="pc-entry__choices">
           <button
             className={`pc-person-card${selected === "Male" ? " is-selected" : ""}`}
@@ -227,20 +317,16 @@ function QuestionScreen({
   onAnswer: (answer: AnswerId) => void;
 }) {
   const question = QUESTIONS[index];
-  const text =
-    gender === "Female"
-      ? question.text.replace("próximo da Bíblia", "próxima da Bíblia")
-      : question.text;
-  const accent =
-    gender === "Female"
-      ? question.accent.replace("próximo da Bíblia", "próxima da Bíblia")
-      : question.accent;
+  const text = question.text;
+  const accent = question.accent;
   const current = index + 1;
   const total = QUESTIONS.length;
 
   return (
     <AppShell className="pc-app--question">
-      <main className="pc-question pc-reveal">
+      <main
+        className={`pc-question pc-reveal${question.options.length > 3 ? " pc-question--four" : ""}`}
+      >
         <header className="pc-question__header">
           <button className="pc-back" onClick={onBack} aria-label="Voltar">
             ‹
@@ -251,11 +337,12 @@ function QuestionScreen({
           </strong>
         </header>
         <Progress current={current} total={total} />
+        <p className="pc-question__phase">{question.phase}</p>
         <h1>
           <AccentText text={text} accent={accent} />
         </h1>
         <div className="pc-question__answers" role="group" aria-label="Escolha uma resposta">
-          {ANSWER_OPTIONS.map((answer) => (
+          {question.options.map((answer) => (
             <button
               className={selected === answer.id ? "is-selected" : ""}
               onClick={() => onAnswer(answer.id)}
@@ -265,7 +352,11 @@ function QuestionScreen({
               <span className="pc-answer__emoji" aria-hidden="true">
                 {answer.emoji}
               </span>
-              <strong>{answer.label}</strong>
+              <strong>
+                {gender === "Female"
+                  ? answer.label.replace("frustrado(a)", "frustrada")
+                  : answer.label.replace("frustrado(a)", "frustrado")}
+              </strong>
               <span className="pc-answer__check" aria-hidden="true">
                 {selected === answer.id ? "✓" : ""}
               </span>
@@ -275,6 +366,174 @@ function QuestionScreen({
       </main>
     </AppShell>
   );
+}
+
+function midpointMessage(answers: Answers) {
+  const readingOften = answers.frequencia === "quase-todos";
+  const routineHolds = answers.rotina === "nao";
+  const stoppedBefore = answers.plano === "mais-de-uma" || answers.plano === "uma-vez";
+
+  if (readingOften && routineHolds) {
+    return {
+      title: "Você já abriu espaço para a Palavra.",
+      copy: "Agora vamos entender o que pode transformar essa leitura em um percurso completo, sem deixar partes importantes para trás.",
+    };
+  }
+
+  if (stoppedBefore || answers.rotina === "sim") {
+    return {
+      title:
+        answers.desejo === "incerto"
+          ? "A rotina mostra onde a leitura costuma parar."
+          : "O desejo existe. A rotina é que interrompe o caminho.",
+      copy: "Isso não mede a sua fé. Só mostra que vontade e constância são coisas diferentes — e que o caminho precisa funcionar também nos dias corridos.",
+    };
+  }
+
+  return {
+    title: "Você chegou à metade.",
+    copy: "Agora vamos entender o que tornaria sua leitura mais clara, constante e possível de continuar até o fim.",
+  };
+}
+
+function Checkpoint({
+  answers,
+  onBack,
+  onContinue,
+}: {
+  answers: Answers;
+  onBack: () => void;
+  onContinue: () => void;
+}) {
+  const message = midpointMessage(answers);
+
+  useEffect(() => {
+    track("quiz_midpoint_viewed", { answered: MIDPOINT_INDEX + 1 });
+  }, []);
+
+  return (
+    <AppShell className="pc-app--bridge">
+      <main className="pc-bridge pc-reveal">
+        <header className="pc-question__header">
+          <button className="pc-back" onClick={onBack} aria-label="Voltar">
+            ‹
+          </button>
+          <BrandLogo />
+          <strong>50%</strong>
+        </header>
+
+        <div className="pc-bridge__visual" aria-hidden="true">
+          <span>5</span>
+          <i />
+          <b>10</b>
+        </div>
+
+        <p className="pc-bridge__eyebrow">Uma pausa rápida</p>
+        <h1>{message.title}</h1>
+        <p className="pc-bridge__copy">{message.copy}</p>
+
+        <button className="pc-bridge__cta" onClick={onContinue}>
+          Entender o que falta <span>›</span>
+        </button>
+      </main>
+    </AppShell>
+  );
+}
+
+interface QuizProfile {
+  id: "caminho" | "ritmo" | "panorama";
+  eyebrow: string;
+  title: string;
+  copy: string;
+  insight: string;
+  signals: {
+    desire: string;
+    rhythm: string;
+    direction: string;
+  };
+}
+
+function buildProfile(answers: Answers): QuizProfile {
+  const desireIsClear = answers.desejo !== "incerto";
+  const directionScore =
+    (answers.direcao === "raramente" ? 3 : answers.direcao === "as-vezes" ? 1 : 0) +
+    (answers.plano === "mais-de-uma" ? 2 : answers.plano === "uma-vez" ? 1 : 0) +
+    (answers.organizacao === "muito" ? 2 : answers.organizacao === "um-pouco" ? 1 : 0);
+
+  const rhythmScore =
+    (answers.frequencia === "raramente" ? 3 : answers.frequencia === "alguns" ? 1 : 0) +
+    (answers.rotina === "sim" ? 2 : answers.rotina === "as-vezes" ? 1 : 0) +
+    (answers.conclusao === "raramente" ? 2 : answers.conclusao === "as-vezes" ? 1 : 0) +
+    (answers.tempo === "incerto" ? 2 : answers.tempo === "maioria" ? 1 : 0);
+
+  const panoramaScore =
+    (answers.panorama === "sim" ? 3 : answers.panorama === "em-parte" ? 1 : 0) +
+    (answers.desejo === "muito" ? 2 : answers.desejo === "distante" ? 1 : 0) +
+    (answers.conclusao === "geralmente" ? 1 : 0);
+
+  const signals = {
+    desire:
+      answers.desejo === "muito"
+        ? "Muito claro"
+        : answers.desejo === "distante"
+          ? "Existe"
+          : "Em construção",
+    rhythm:
+      answers.frequencia === "quase-todos"
+        ? "Já acontece"
+        : answers.frequencia === "alguns"
+          ? "Oscilante"
+          : "Ainda irregular",
+    direction:
+      answers.direcao === "quase-sempre"
+        ? "Clara"
+        : answers.direcao === "as-vezes"
+          ? "Variável"
+          : "Indefinida",
+  };
+
+  if (rhythmScore >= directionScore && rhythmScore >= panoramaScore) {
+    return {
+      id: "ritmo",
+      eyebrow: "Seu ponto de partida: constância",
+      title: desireIsClear
+        ? "A vontade existe. O desafio é fazê-la caber na vida real."
+        : "Seu primeiro passo é encontrar um ritmo que caiba na vida real.",
+      copy: desireIsClear
+        ? "Sua leitura disputa espaço com a semana corrida e perde ritmo quando cada dia depende de uma nova decisão."
+        : "Você ainda está entendendo esse objetivo, e uma rotina pesada tornaria essa decisão ainda mais difícil.",
+      insight: "O melhor caminho para você precisa ser curto, definido e fácil de retomar — inclusive depois de um dia perdido.",
+      signals,
+    };
+  }
+
+  if (directionScore >= panoramaScore) {
+    return {
+      id: "caminho",
+      eyebrow: "Seu ponto de partida: direção",
+      title: desireIsClear
+        ? "O desejo existe. O que falta é um caminho claro para amanhã."
+        : "Um caminho claro pode ajudar você a descobrir o próximo passo.",
+      copy: desireIsClear
+        ? "Suas respostas colocam a escolha do que ler e o recomeço depois de uma pausa entre os principais pontos de atrito."
+        : "Você ainda está entendendo esse objetivo, mas saber exatamente o que ler pode tornar o começo mais simples.",
+      insight: "Um percurso diário já organizado reduz essa decisão repetida: você abre, lê a porção do dia e sabe onde continuar.",
+      signals,
+    };
+  }
+
+  return {
+    id: "panorama",
+    eyebrow: "Seu ponto de partida: visão do todo",
+    title: desireIsClear
+      ? "Você não busca apenas ler mais. Busca finalmente enxergar o todo."
+      : "Seu próximo passo pode ser enxergar como as partes formam o todo.",
+    copy: desireIsClear
+      ? "Suas respostas mostram interesse em sair dos trechos conhecidos e percorrer a Bíblia sem abandonar os livros mais densos."
+      : "Você ainda está entendendo esse objetivo, mas demonstrou interesse em conhecer a Bíblia além dos trechos mais familiares.",
+    insight: "Para isso, o caminho precisa distribuir a leitura ao longo do ano e manter Antigo e Novo Testamento presentes.",
+    signals,
+  };
 }
 
 function Loading({ onDone }: { onDone: () => void }) {
@@ -332,16 +591,77 @@ function Loading({ onDone }: { onDone: () => void }) {
           </output>
         </div>
 
-        <p className="pc-loading__eyebrow">Só mais um instante</p>
-        <h1>Abrindo o próximo capítulo...</h1>
+        <p className="pc-loading__eyebrow">Respostas registradas</p>
+        <h1>Preparando seu ponto de partida...</h1>
         <p className="pc-loading__copy">
-          Em seguida, você vai conhecer uma forma de percorrer a Bíblia inteira ao
-          longo de um ano.
+          O resultado organiza o que você marcou. Ele não mede a sua fé e não cria
+          um diagnóstico sobre você.
         </p>
 
         <div className="pc-loading__track" aria-hidden="true">
           <i style={{ width: `${progress}%` }} />
         </div>
+      </main>
+    </AppShell>
+  );
+}
+
+function ProfileScreen({
+  answers,
+  onBack,
+  onContinue,
+}: {
+  answers: Answers;
+  onBack: () => void;
+  onContinue: () => void;
+}) {
+  const profile = buildProfile(answers);
+
+  useEffect(() => {
+    track("quiz_profile_viewed", { profile: profile.id });
+  }, [profile.id]);
+
+  return (
+    <AppShell className="pc-app--profile">
+      <main className="pc-profile pc-reveal">
+        <header className="pc-question__header">
+          <button className="pc-back" onClick={onBack} aria-label="Voltar">
+            ‹
+          </button>
+          <BrandLogo />
+          <strong>Resultado</strong>
+        </header>
+
+        <p className="pc-profile__eyebrow">{profile.eyebrow}</p>
+        <h1>{profile.title}</h1>
+        <p className="pc-profile__copy">{profile.copy}</p>
+
+        <div className="pc-profile__signals" aria-label="Resumo das suas respostas">
+          <div>
+            <span>Desejo</span>
+            <strong>{profile.signals.desire}</strong>
+          </div>
+          <div>
+            <span>Ritmo</span>
+            <strong>{profile.signals.rhythm}</strong>
+          </div>
+          <div>
+            <span>Direção</span>
+            <strong>{profile.signals.direction}</strong>
+          </div>
+        </div>
+
+        <section className="pc-profile__insight">
+          <small>O que isso indica</small>
+          <p>{profile.insight}</p>
+        </section>
+
+        <button className="pc-profile__cta" onClick={onContinue}>
+          Conhecer um caminho possível <span>›</span>
+        </button>
+        <small className="pc-profile__note">
+          Resultado baseado somente nas respostas deste quiz.
+        </small>
       </main>
     </AppShell>
   );
@@ -408,9 +728,9 @@ function CheckoutScreen() {
 }
 
 export function McCheyneQuiz() {
-  const [screen, setScreen] = useState<"landing" | "questions" | "loading" | "result">(
-    "landing",
-  );
+  const [screen, setScreen] = useState<
+    "landing" | "questions" | "checkpoint" | "loading" | "profile" | "result"
+  >("landing");
   const [index, setIndex] = useState(0);
   const [answers, setAnswers] = useState<Answers>({});
   const [selected, setSelected] = useState<AnswerId>();
@@ -418,7 +738,7 @@ export function McCheyneQuiz() {
 
   useEffect(() => {
     const previousTitle = document.title;
-    document.title = "Seu caminho de leitura | Bíblia McCheyne";
+    document.title = "Descubra seu caminho de leitura | Bíblia McCheyne";
     document.documentElement.classList.add("pc-document");
     document.body.classList.add("pc-document");
     return () => {
@@ -451,6 +771,8 @@ export function McCheyneQuiz() {
       if (index >= QUESTIONS.length - 1) {
         track("quiz_completed", { question_count: QUESTIONS.length });
         setScreen("loading");
+      } else if (index === MIDPOINT_INDEX) {
+        setScreen("checkpoint");
       } else {
         setIndex((current) => current + 1);
       }
@@ -464,9 +786,21 @@ export function McCheyneQuiz() {
       setSelected(undefined);
       return;
     }
-    if (screen === "result") {
+    if (screen === "checkpoint") {
+      setScreen("questions");
+      setIndex(MIDPOINT_INDEX);
+      setSelected(undefined);
+      return;
+    }
+    if (screen === "profile") {
       setScreen("questions");
       setIndex(QUESTIONS.length - 1);
+      setSelected(undefined);
+      window.scrollTo(0, 0);
+      return;
+    }
+    if (screen === "result") {
+      setScreen("profile");
       window.scrollTo(0, 0);
     }
   };
@@ -484,10 +818,34 @@ export function McCheyneQuiz() {
         onAnswer={answer}
       />
     );
+  } else if (screen === "checkpoint") {
+    content = (
+      <Checkpoint
+        answers={answers}
+        onBack={back}
+        onContinue={() => {
+          setIndex(MIDPOINT_INDEX + 1);
+          setScreen("questions");
+          window.scrollTo(0, 0);
+        }}
+      />
+    );
   } else if (screen === "loading") {
     content = (
       <Loading
         onDone={() => {
+          setScreen("profile");
+          window.scrollTo(0, 0);
+        }}
+      />
+    );
+  } else if (screen === "profile") {
+    content = (
+      <ProfileScreen
+        answers={answers}
+        onBack={back}
+        onContinue={() => {
+          track("quiz_profile_continued", { profile: buildProfile(answers).id });
           setScreen("result");
           window.scrollTo(0, 0);
         }}
