@@ -138,9 +138,7 @@ const QUESTIONS: Question[] = [
 
 const MIDPOINT_INDEX = 4;
 
-const CHECKOUT_URL =
-  process.env.NEXT_PUBLIC_MCCHEYNE_CHECKOUT_URL ??
-  "https://marcaseditora.com.br/produtos/biblia-devocional-mccheyne-vintage-preta-snz0d/";
+const CHECKOUT_URL = "https://marcaseditora.com.br/cart-link/1464343353-1";
 
 function buzz() {
   if ("vibrate" in navigator) navigator.vibrate(8);
@@ -669,6 +667,7 @@ function ProfileScreen({
 
 function CheckoutScreen() {
   const viewed = useRef(false);
+  const checkoutStarted = useRef(false);
 
   useEffect(() => {
     if (viewed.current) return;
@@ -677,9 +676,17 @@ function CheckoutScreen() {
   }, []);
 
   const checkout = () => {
+    if (checkoutStarted.current) return;
+    checkoutStarted.current = true;
     buzz();
     track("quiz_checkout_clicked", { price: 87.9 });
-    window.location.assign(CHECKOUT_URL);
+    window.fbq?.("track", "InitiateCheckout", {
+      value: 87.9,
+      currency: "BRL",
+      content_name: "Bíblia Devocional McCheyne",
+      content_type: "product",
+    });
+    window.setTimeout(() => window.location.assign(CHECKOUT_URL), 120);
   };
 
   return (
