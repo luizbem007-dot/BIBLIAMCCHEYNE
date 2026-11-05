@@ -36,6 +36,7 @@ export default function RootLayout({
             s.parentNode.insertBefore(t,s)}(window, document,'script',
             'https://connect.facebook.net/en_US/fbevents.js');
             fbq('init', '1401784071942114');
+            fbq('init', '1595073494724253'); // pixel da loja marcaseditora.com.br, onde a compra acontece
             fbq('track', 'PageView');
           `}
         </Script>
