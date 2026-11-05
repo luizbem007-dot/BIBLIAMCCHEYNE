@@ -997,9 +997,9 @@ export const siteConfig = {
       },
       {
         id: 5,
-        question: "Os R$ 80,00 são uma assinatura mensal?",
+        question: "Os R$ 87,90 são uma assinatura mensal?",
         answer:
-          "Não, você não está comprando um aplicativo ou assinatura. Este é um pagamento único de R$ 80,00 para receber a Bíblia física premium diretamente na sua casa. Não existem mensalidades ou taxas escondidas.",
+          "Não, você não está comprando um aplicativo ou assinatura. Este é um pagamento único de R$ 87,90 pela Bíblia física premium, mais o frete até a sua casa, que a loja calcula pelo seu CEP antes de você pagar. Não existem mensalidades.",
       },
       {
         id: 6,

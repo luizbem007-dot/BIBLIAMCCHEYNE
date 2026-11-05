@@ -38,16 +38,16 @@ export function PricingSection() {
 
           {/* Preço - destaque visual */}
           <div className="flex flex-col items-center gap-2">
-            <span className="text-base text-muted-foreground line-through decoration-red-400/60">
-              R$ 87,00
-            </span>
             <div className="relative">
               <span className="text-6xl sm:text-7xl font-black tracking-tighter text-primary">
-                R$80
+                R$ 87,90
               </span>
             </div>
             <span className="text-sm text-muted-foreground font-medium tracking-wide uppercase">
               pagamento único
+            </span>
+            <span className="text-xs text-muted-foreground">
+              + frete, calculado na loja pelo seu CEP
             </span>
           </div>
         </div>
